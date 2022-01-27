@@ -80,11 +80,22 @@ Examine the dataset and answer the following questions. Enter any code you use i
 
 * How many variables are in the dataset?
 
-    + Answer:
+    + Answer:11 variables
     
 * List each variable and the level of measurement. Note if there are any issues you see with the data in that variable. (The first one is done for you.)
 
     + sex - nominal, no issues noted
+    +	research – nominal 
+    +	height – continuous-decimal
+    +	weight – continuous-decimal
+    +	lvst1 – ordinal- Integer
+    +	lvst2 – ordinal- Integer
+    +	lvst3- ordinal- Integer
+    +	lvst4- ordinal- Integer
+    +	frst1- ordinal- Integer
+    +	frst2- ordinal- Integer
+    +	frst3- ordinal- Integer
+
     
 ```{r, eval=FALSE}
 
@@ -95,7 +106,7 @@ The dataset includes variables for height and weight. Calculate the BMI for each
 
 * What level of measurement is the new bmi variable?
 
-    + Answer: 
+    + Answer: ratio
 
 ```{r}
 dataset <- dataset %>% mutate(bmi = round(weight/(height/100)^2,1)) 
@@ -109,7 +120,7 @@ The Love of Statistics Scale consists of 4 questions rated on a scale of 1-5. Be
 
 * What level of measurement is the new lvst4reverse variable?
 
-    + Answer: 
+    + Answer: Ordinal ----> Interval
     
 ```{r}
 # The line below is how I first reverse coded the variable. It seemed to work, but I later found some problems with the z-scores.
